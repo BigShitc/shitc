@@ -1,0 +1,5 @@
+for n from 1 to 15:
+  if n is divisible by 15, print "FizzBuzz"
+  else if n is divisible by 3, print "Fizz"
+  else if n is divisible by 5, print "Buzz"
+  else print n

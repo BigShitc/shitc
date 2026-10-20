@@ -1,0 +1,45 @@
+{
+  "name": "shitc",
+  "version": "0.2.0",
+  "description": "The ShitLang compiler: point it at a pseudo-code file, an LLM emits real code, shitc writes and builds it — and runs it only with `shitc run`.",
+  "type": "module",
+  "bin": {
+    "shitc": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "packageManager": "pnpm@11.22.0",
+  "scripts": {
+    "build": "tsup && chmod +x dist/cli.js",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "pretest": "pnpm typecheck",
+    "prepare": "pnpm build",
+    "prepublishOnly": "pnpm build && pnpm test",
+    "shitc": "node dist/cli.js"
+  },
+  "keywords": [
+    "compiler",
+    "cli",
+    "llm",
+    "openai",
+    "pseudo-code",
+    "shitlang",
+    "codegen"
+  ],
+  "license": "MIT",
+  "author": "",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
